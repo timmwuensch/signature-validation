@@ -75,13 +75,13 @@ if data_augmentation:
 
 
 # Load model
-model = best_model.Format_Recognition_Model.load_model_A24()
+model = best_model.Format_Recognition_Model.load_model_A11()
 
 model.summary()
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 saver = MySaver(model)
-checkpoint = keras.callbacks.ModelCheckpoint('best_A24_adam_16_big.h5', monitor='val_acc', mode='max', save_best_only=True, verbose=1)
+checkpoint = keras.callbacks.ModelCheckpoint('best_A11_adam_16_big.h5', monitor='val_acc', mode='max', save_best_only=True, verbose=1)
 
 # Reset random seeds
 random.seed(seed_value)
@@ -98,5 +98,5 @@ elif training and not data_augmentation:
     history = model.fit(X_train, Y_train, epochs=epochs, batch_size=batch_size, validation_data=(X_test, Y_test),
                         callbacks=[saver])
 
-path = dataset + 'A24_adam_16_big.h5'
+path = dataset + 'format_recognition_model.h5'
 model.save(path)
