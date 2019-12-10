@@ -61,8 +61,6 @@ architectures.
 
 The best examined model consists of 13 layer as shown in the following figure:
 
-![Model Format Recognition](/docs/model_A11.PNG "Model Format Recognition")
-
 <img src="/docs/model_A11.PNG" alt="drawing" width="400"/>
 
 The model was trained over 300 epochs with a batch size of 16 and the Stochastic Gradient Decent optimizer. The used loss function was
@@ -95,7 +93,7 @@ The entire dataset was unbalanced and further expanded with Data Augmentation (h
 The architecture was taken from Kaggle as well (see the solution of [CodHeK](https://www.kaggle.com/codhek/cnn-using-keras-using-csv-accuracy-99-82)).
 It was trained over 20 epochs with a batch size of 64 and optimized with Adam optimizer. The concrete model is visualized in the following figure:
 
-![Model Letter Recognition](/docs/model_kaggle.PNG "Model Letter Recognition")
+<img src="/docs/model_kaggle.PNG" alt="drawing" width="400"/>
 
 This model achieves 99.04% accuracy rate on the validation set after 20 epochs of training.
 
@@ -126,7 +124,7 @@ The evaluation is based on the results of both components. A signature is valid 
 one of the two capital letters is recognized by the Letter Recognition and equals a character of the real name string. To visualize 
 this decision process please have a look on the following flowchart diagram:
 
-![Flowchart](/docs/pap_system.PNG "Flowchart")
+<img src="/docs/pap_system.PNG" alt="drawing" width="600"/>
 
 ## How to use this code?
 To use this code please copy this repository and install the requirements. You can find them in `environment.yml` and `requirements.txt` to easily create a conda environment.
