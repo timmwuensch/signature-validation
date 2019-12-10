@@ -63,6 +63,8 @@ The best examined model consists of 13 layer as shown in the following figure:
 
 ![Model Format Recognition](/docs/model_A11.PNG "Model Format Recognition")
 
+<img src="/docs/model_A11.PNG" alt="drawing" width="400"/>
+
 The model was trained over 300 epochs with a batch size of 16 and the Stochastic Gradient Decent optimizer. The used loss function was
 Categorical Crossentropy and all layers were activated with Rectified Linear Unit (ReLU), except for the output layer which is activated with Softmax.
 
