@@ -61,18 +61,18 @@ architectures.
 
 The best examined model consists of 13 layer as shown in the following figure:
 
-*Figure Model A11*
+![Model Format Recognition](/docs/model_A11.png "Model Format Recognition")
 
 The model was trained over 300 epochs with a batch size of 16 and the Stochastic Gradient Decent optimizer. The used loss function was
 Categorical Crossentropy and all layers were activated with Rectified Linear Unit (ReLU), except for the output layer which is activated with Softmax.
 
 The following figure shows the accuracy of the model in relation to the validation data (orange) and to the train data (blue) over 300 train epochs.
  
-*Figure Accuracy of A11(SGD)*
+![Accuracy of model A11](/docs/acc_A11.png "Accuracy of model A11")
 
 In addition to the accuracy diagram let's have a look to the loss development as well. The notation equals the figure above. 
 
-*Figure Loss of A11(SGD)*
+![Loss of model A11](/docs/loss_A11.png "Loss of model A11")
 
 In both figures we can see some kind of overfitting symptoms after 180 epochs of training. The best accuracy value occurs in epoch 284 with 97.1% accuracy 
 rate on the validation set. The state of epoch 284 is saved by a checkpoint during the training and is now used as the main model of the Format Recognition classifier.
@@ -93,7 +93,7 @@ The entire dataset was unbalanced and further expanded with Data Augmentation (h
 The architecture was taken from Kaggle as well (see the solution of [CodHeK](https://www.kaggle.com/codhek/cnn-using-keras-using-csv-accuracy-99-82)).
 It was trained over 20 epochs with a batch size of 64 and optimized with Adam optimizer. The concrete model is visualized in the following figure:
 
-*Figure Model Kaggle*
+![Model Letter Recognition](/docs/model_kaggle.png "Model Letter Recognition")
 
 This model achieves 99.04% accuracy rate on the validation set after 20 epochs of training.
 
@@ -108,7 +108,7 @@ challenges. To serve correct samples to the Letter Recognition, the segmentation
 5. Define valid letter segments with the help of detected spaces, segments and average length
 6. Cut the letter segments out of the image and rescale it to 28x28 square images to feed them into the Letter Recognition classifier
 
-*Figure to visualize the process*
+![Segmentation Overview](/docs/segmentation.png "Segmentation Overview")
 
 To improve the segmentation process it would be very promising optimize the in-code-threshold (i.e. for the average letter segment length) or to normalize 
 the signature images (i.e. with shear and rotation parameters) due to handwriting issues. Furthermore, it is possible to train an additional CNN
@@ -118,13 +118,13 @@ to find the locations of the capital letter segments.
 As already mentioned, the system is divided into two sub components which are used and called in the main script [validate_signature.py](https://github.com/timmwuensch/signature-validation/blob/master/main/validate_signature.py).
 The following figure gives a short system overview:
 
-*Figure System overview*
+![System Overview](/docs/system_overview.png "System Overview")
 
 The evaluation is based on the results of both components. A signature is valid if the format equals Format 1 and if at least 
 one of the two capital letters is recognized by the Letter Recognition and equals a character of the real name string. To visualize 
 this decision process please have a look on the following flowchart diagram:
 
-*Flowchart*
+![Flowchart](/docs/pap_system.png "Flowchart")
 
 ## How to use this code?
 To use this code please copy this repository and install the requirements. You can find them in `environment.yml` and `requirements.txt` to easily create a conda environment.
