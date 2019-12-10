@@ -15,7 +15,7 @@ the basis of 1,000 different signatures. So far, the system can be used as a val
 #### Table of contents
 1. [What is this code used for?](#what-is-this-code-used-for)
 2. [How does it solve the problem?](#how-does-it-solve-the-problem)
-3. [Whats is the implementation?](#whats-is-the-implementation)
+3. [What is the implementation?](#what-is-the-implementation)
 4. [How to use this code?](#how-to-use-this-code)
 
 
@@ -114,7 +114,7 @@ To improve the segmentation process it would be very promising optimize the in-c
 the signature images (i.e. with shear and rotation parameters) due to handwriting issues. Furthermore, it is possible to train an additional CNN
 to find the locations of the capital letter segments.
 
-## Whats is the implementation?
+## What is the implementation?
 As already mentioned, the system is divided into two sub components which are used and called in the main script [validate_signature.py](https://github.com/timmwuensch/signature-validation/blob/master/main/validate_signature.py).
 The following figure gives a short system overview:
 
